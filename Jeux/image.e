@@ -8,6 +8,8 @@ class
 	IMAGE
 inherit
 	SDL_WRAPPER
+
+
 create
 	make_image
 feature

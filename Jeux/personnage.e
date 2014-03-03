@@ -1,11 +1,17 @@
 note
-	description: "Summary description for {PERSONNAGE}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "Summary description for {PERSONNAGE}."
+	author: ""
+	date: "$Date$"
+	revision: "$Revision$"
 
-class
-	PERSONNAGE
+class
+	PERSONNAGE
 
-end
-
+inherit
+	IMAGE
+
+	COLLISION
+
+	MOUVEMENT
+
+end

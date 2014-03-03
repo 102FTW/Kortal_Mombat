@@ -11,7 +11,7 @@ case "$O" in
 esac
 echo "Preparing C compilation"
 $spitshell >Makefile <<!GROK!THIS!
-INCLUDE_PATH =  -I"C:\Users\0923283\Downloads\test-sdl\test-sdl\SDL-1.2.14\include\SDL"
+INCLUDE_PATH =  -I"..\..\..\..\SDL-1.2.14\include\SDL"
 SHELL = /bin/sh
 CC = $cc
 CPP = $cpp
@@ -56,7 +56,7 @@ $spitshell >>Makefile <<'!NO!SUBS!'
 SUBDIRS = C1 E1
 
 EXTERNALS =  \
-	"C:\Users\0923283\Downloads\test-sdl\test-sdl\SDL-1.2.14\lib\libSDL.dll.a"
+	"..\..\..\SDL-1.2.14\lib\libSDL.dll.a"
 
 all: jeux
 

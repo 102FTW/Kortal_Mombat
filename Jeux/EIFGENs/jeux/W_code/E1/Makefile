@@ -1,4 +1,4 @@
-INCLUDE_PATH =  -I"C:\Users\0923283\Downloads\test-sdl\test-sdl\SDL-1.2.14\include\SDL"
+INCLUDE_PATH =  -I"..\..\..\..\SDL-1.2.14\include\SDL"
 SHELL = /bin/sh
 CC = "C:\Program Files (x86)\Eiffel Software\EiffelStudio 13.11 GPL/gcc/windows/mingw/bin/gcc"
 CPP = "C:\Program Files (x86)\Eiffel Software\EiffelStudio 13.11 GPL/gcc/windows/mingw/bin/gcc"

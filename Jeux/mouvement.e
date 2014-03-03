@@ -4,13 +4,8 @@ note
 	date: "$Date$"
 	revision: "$Revision$"
 
-class
+deferred class
 	MOUVEMENT
-inherit
-	GAME
-
-create
-	make
 
 feature
 
