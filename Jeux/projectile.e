@@ -1,11 +1,17 @@
 note
-	description: "Summary description for {PROJECTILE}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "Summary description for {PROJECTILE}."
+	author: ""
+	date: "$Date$"
+	revision: "$Revision$"
 
-class
-	PROJECTILE
+class
+	PROJECTILE
 
-end
-
+inherit
+	IMAGE
+
+	COLLISION
+
+	MOUVEMENT
+
+end
