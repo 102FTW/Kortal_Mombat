@@ -5,7 +5,8 @@ note
 
 class
 	GAME
-
+inherit
+	SDL_WRAPPER
 create
 	make
 
@@ -32,7 +33,15 @@ feature
 			l_perso:PERSONNAGE
 			l_projectile:PROJECTILE
 		do
+			create Handle_Event.make_event
 			create affichage.make_affichage
-			affichage.afficher
+			from
+			until
+				handle_event.quit_happens
+			loop
+				Handle_event.handle
+				affichage.afficher
+			end
+			SDL_QUIT_BYE
 		end
 end

@@ -37,7 +37,7 @@ feature
 		personnage.blitsurface
 		sandbag.blitsurface
 		error := SDL_Flip (screen)
-		SDL_Delay (20000)
+		SDL_Delay (1)
 	end
 
 end

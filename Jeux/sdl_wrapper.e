@@ -14,6 +14,20 @@ feature {NONE}
 			"SDL_Init"
 		end
 
+	frozen SDL_PollEvent(event:POINTER):INTEGER
+	external
+		"C (SDL_Event*): int | <SDL.h>"
+	alias
+		"SDL_PollEvent"
+	end
+
+	frozen SDL_Quit_bye
+		external
+			"C | <SDL.h>"
+		alias
+			"SDL_Quit"
+		end
+
 	frozen SDL_SRCCOLORKEY:NATURAL_32
 		external
 			"C inline use <SDL.h>"
@@ -40,6 +54,20 @@ feature {NONE}
 			"C inline use <SDL.h>"
 		alias
 			"sizeof(SDL_Rect)"
+		end
+
+	frozen SDL_SIZEOF_EVENT: INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"sizeof(SDL_Event)"
+		end
+
+	frozen SDL_QUIT:NATURAL_8
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDL_QUIT"
 		end
 
 	frozen SDL_LoadBMP (file: POINTER): POINTER
@@ -139,5 +167,11 @@ feature {NONE}
 			"C [struct <SDL.h>] (SDL_Surface):SDL_PixelFormat *"
 		alias
 			"format"
+		end
+	frozen get_type (event:POINTER):NATURAL_8
+		external
+			"C [struct <SDL.h>] (SDL_Event): Uint8"
+		alias
+			"type"
 		end
 end
