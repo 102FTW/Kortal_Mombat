@@ -12,6 +12,6 @@ inherit
 
 	COLLISION
 
-	MOUVEMENT
+	MOVEMENT
 
 end

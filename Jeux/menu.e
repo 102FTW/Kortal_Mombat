@@ -13,7 +13,7 @@ feature -- Access
 			-- `menu_event'
 		attribute check False then end end --| Remove line when `menu_event' is initialized in creation procedure.
 
-	Images_menu: IMAGE
+	image: IMAGE
 			-- `Images_menu'
 		attribute check False then end end --| Remove line when `Images_menu' is initialized in creation procedure.
 

@@ -28,6 +28,20 @@ feature {NONE}
 			"SDL_Quit"
 		end
 
+	frozen SDL_GetKey (event:POINTER):POINTER
+		external
+			"C [struct <SDL.h>] (SDL_Event):SDL_KeyboardEvent"
+		alias
+			"&key"
+		end
+
+	frozen SDL_GetKeySym(event:POINTER):INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"((SDL_KeyboardEvent *)$event)->keysym.sym"
+		end
+
 	frozen SDL_SRCCOLORKEY:NATURAL_32
 		external
 			"C inline use <SDL.h>"
@@ -47,6 +61,27 @@ feature {NONE}
 			"C inline use <SDL.h>"
 		alias
 			"SDL_SWSURFACE"
+		end
+
+	frozen SDL_KEYDOWN:NATURAL_8
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDL_KEYDOWN"
+		end
+
+	frozen SDL_KEYUP:NATURAL_8
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDL_KEYUP"
+		end
+
+	frozen SDLK_RIGHT:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_RIGHT"
 		end
 
 	frozen SDL_SIZEOF: INTEGER
@@ -146,8 +181,18 @@ feature {NONE}
 		alias
 			"y"
 		end
-
-
+	frozen get_x_rect(targetarea: POINTER):INTEGER_16
+		external
+			"C [struct <SDL.h>] (SDL_Rect): Sint16"
+		alias
+			"x"
+		end
+	frozen get_y_rect(targetarea: POINTER):INTEGER_16
+		external
+				"C [struct <SDL.h>] (SDL_Rect): Sint16"
+		alias
+			"y"
+		end
 	frozen get_h_image (targetarea: POINTER): INTEGER
 		external
 			"C [struct <SDL.h>] (SDL_Surface):int"

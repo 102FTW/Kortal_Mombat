@@ -12,17 +12,17 @@ inherit
 	SDL_WRAPPER
 
 create
-	make_event
+	make
 
 feature
 
 	SDL_Event:POINTER
 
-	quit_happens:BOOLEAN
+	quit_happens,right_pressed:BOOLEAN
 
 	return_value: INTEGER
 
-	make_event
+	make
 		local
 			memory_manager: POINTER
 		do
@@ -38,18 +38,39 @@ feature
 	 			if is_quit then
 	 				quit_happens:= true
 	 			end
+	 			if is_keydown then
+	 				key_down
+	 			end
+	 			if is_keyup then
+					key_up
+	 			end
 	 			fetch_next
 	 		end
 	 	end
 
+	key_down
+		local
+			keysym:INTEGER
+		do
+			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
+			right_pressed:=(keysym = SDLK_RIGHT)
+		end
+	key_up
+		local
+			keysym:INTEGER
+		do
+			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
+			right_pressed:= not (keysym = SDLK_RIGHT)
+		end
+
 	fetch_next
 		do
-			return_value := SDL_PollEvent (SDL_EVENT)
+			return_value := SDL_PollEvent (SDL_Event)
 		end
 
 	exhausted: BOOLEAN
 		do
-			result := return_Value = 0
+			result := return_value = 0
 		end
 
 	type: NATURAL_8
@@ -59,11 +80,17 @@ feature
 
 	is_quit: BOOLEAN
 		do
-			if type = SDL_QUIT then
-				Result := true
-			else
-				Result := false
-			end
+			Result:=type = SDL_QUIT
+		end
+
+	is_keydown: BOOLEAN
+		do
+			Result:=type = SDL_KEYDOWN
+		end
+
+	is_keyup: BOOLEAN
+		do
+			Result:=type = SDL_KEYUP
 		end
 
 end

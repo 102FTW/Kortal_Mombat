@@ -18,11 +18,7 @@ feature -- Access
 
 	 --| Remove line when `Collision' is initialized in creation procedure.
 
-	Handle_Event: EVENT
-			-- `Handle_Event'
-		attribute check False then end end --| Remove line when `Handle_Event' is initialized in creation procedure.
-
-	affichage: AFFICHAGE
+	affichage: DISPLAY
 			-- `affichage'
 		attribute check False then end end --| Remove line when `affichage' is initialized in creation procedure.
 
@@ -30,17 +26,22 @@ feature
 
 	make
 		local
-			l_perso:PERSONNAGE
+			l_perso:PERSONAGE
 			l_projectile:PROJECTILE
+			event:EVENT
+
 		do
-			create Handle_Event.make_event
-			create affichage.make_affichage
+			create event.make
+			create affichage.make
 			from
 			until
-				handle_event.quit_happens
+				event.quit_happens
 			loop
-				Handle_event.handle
-				affichage.afficher
+				event.handle
+				if event.right_pressed then -- AJOUTER LEFT UP DOWN
+
+				end
+				affichage.show
 			end
 			SDL_QUIT_BYE
 		end
