@@ -18,7 +18,7 @@ feature
 
 	SDL_Event:POINTER
 
-	quit_happens,right_pressed:BOOLEAN
+	quit_happens,right_pressed,up_pressed,down_pressed,left_pressed:BOOLEAN
 
 	return_value: INTEGER
 
@@ -54,13 +54,30 @@ feature
 		do
 			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
 			right_pressed:=(keysym = SDLK_RIGHT)
+			left_pressed:=(keysym = SDLK_LEFT)
+			up_pressed:=(keysym = SDLK_UP)
+			down_pressed:=(keysym = SDLK_DOWN)
 		end
 	key_up
 		local
 			keysym:INTEGER
 		do
 			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
-			right_pressed:= not (keysym = SDLK_RIGHT)
+			if keysym = SDLK_RIGHT then
+				right_pressed:=false
+			end
+
+			if keysym = SDLK_LEFT then
+						left_pressed:=false
+			end
+
+			if keysym = SDLK_UP then
+						up_pressed:=false
+			end
+
+			if keysym = SDLK_DOWN then
+						down_pressed:=false
+			end
 		end
 
 	fetch_next

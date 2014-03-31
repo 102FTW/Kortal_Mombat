@@ -18,7 +18,8 @@ feature
 
 	screen: POINTER
 
-	background, personnage, sandbag: IMAGE
+	background, sandbag: IMAGE
+	personnage:PERSONAGE
 
 	make
 		local

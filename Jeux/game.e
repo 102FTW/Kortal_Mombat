@@ -18,10 +18,6 @@ feature -- Access
 
 	 --| Remove line when `Collision' is initialized in creation procedure.
 
-	affichage: DISPLAY
-			-- `affichage'
-		attribute check False then end end --| Remove line when `affichage' is initialized in creation procedure.
-
 feature
 
 	make
@@ -29,19 +25,32 @@ feature
 			l_perso:PERSONAGE
 			l_projectile:PROJECTILE
 			event:EVENT
+			display:DISPLAY
 
 		do
 			create event.make
-			create affichage.make
+			create display.make
 			from
 			until
 				event.quit_happens
 			loop
 				event.handle
-				if event.right_pressed then -- AJOUTER LEFT UP DOWN
-
+				if event.right_pressed then
+					display.personnage.go_right
 				end
-				affichage.show
+
+				if event.left_pressed then
+					display.personnage.go_left
+				end
+
+				if event.up_pressed then
+					display.personnage.go_up
+				end
+
+				if event.down_pressed then
+					display.personnage.go_down
+				end
+				display.show
 			end
 			SDL_QUIT_BYE
 		end

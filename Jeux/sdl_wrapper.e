@@ -84,6 +84,27 @@ feature {NONE}
 			"SDLK_RIGHT"
 		end
 
+	frozen SDLK_LEFT:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_LEFT"
+		end
+
+	frozen SDLK_UP:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_UP"
+		end
+
+	frozen SDLK_DOWN:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_DOWN"
+		end
+
 	frozen SDL_SIZEOF: INTEGER
 		external
 			"C inline use <SDL.h>"
