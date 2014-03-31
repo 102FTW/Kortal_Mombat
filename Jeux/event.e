@@ -18,7 +18,7 @@ feature
 
 	SDL_Event:POINTER
 
-	quit_happens,right_pressed,up_pressed,down_pressed,left_pressed:BOOLEAN
+	quit_happens,right_pressed,up_pressed,down_pressed,left_pressed,space_pressed:BOOLEAN
 
 	return_value: INTEGER
 
@@ -57,6 +57,7 @@ feature
 			left_pressed:=(keysym = SDLK_LEFT)
 			up_pressed:=(keysym = SDLK_UP)
 			down_pressed:=(keysym = SDLK_DOWN)
+			space_pressed:=(keysym = SDLK_SPACE)
 		end
 	key_up
 		local
@@ -77,6 +78,10 @@ feature
 
 			if keysym = SDLK_DOWN then
 						down_pressed:=false
+			end
+
+			if keysym = SDLK_SPACE then
+						space_pressed:=false
 			end
 		end
 

@@ -35,6 +35,9 @@ feature
 				event.quit_happens
 			loop
 				event.handle
+				if event.space_pressed AND display.projectile.spawned=false then
+					display.projectile.spawn (display.personnage.x,display.personnage.y,display.personnage.orientation)
+				end
 				if event.right_pressed then
 					display.personnage.go_right
 				end
@@ -49,6 +52,10 @@ feature
 
 				if event.down_pressed then
 					display.personnage.go_down
+				end
+
+				if display.projectile.spawned then
+					display.projectile.move
 				end
 				display.show
 			end

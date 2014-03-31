@@ -104,7 +104,12 @@ feature {NONE}
 		alias
 			"SDLK_DOWN"
 		end
-
+	frozen SDLK_SPACE:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_SPACE"
+		end
 	frozen SDL_SIZEOF: INTEGER
 		external
 			"C inline use <SDL.h>"

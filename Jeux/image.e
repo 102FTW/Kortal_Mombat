@@ -35,7 +35,7 @@ feature
 	do
 		error:=SDL_SetColorKey(image,SDL_SRCCOLORKEY,SDL_MapRGB(get_format(screen),0,255,255))
 	end
-	BlitSurface()
+	BlitSurface
 	local
 		error:INTEGER
 	do
