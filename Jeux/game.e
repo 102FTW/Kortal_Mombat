@@ -46,14 +46,17 @@ feature
 					display.personnage.go_left
 				end
 
-				if event.up_pressed then
-					display.personnage.go_up
+				if event.up_pressed AND display.personnage.jumping=false then
+					display.personnage.jumping:=true
 				end
 
 				if event.down_pressed then
-					display.personnage.go_down
+				--	display.personnage.duck
 				end
 
+				if display.personnage.jumping=true then
+					display.personnage.jump
+				end
 				if display.projectile.spawned then
 					display.projectile.move
 				end

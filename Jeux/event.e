@@ -16,9 +16,9 @@ create
 
 feature
 
-	SDL_Event:POINTER
+	SDL_Event: POINTER
 
-	quit_happens,right_pressed,up_pressed,down_pressed,left_pressed,space_pressed:BOOLEAN
+	quit_happens, right_pressed, up_pressed, down_pressed, left_pressed, space_pressed: BOOLEAN
 
 	return_value: INTEGER
 
@@ -28,60 +28,68 @@ feature
 		do
 			SDL_Event := memory_manager.memory_calloc (1, SDL_SIZEOF_EVENT)
 		end
+
 	handle
-	 	do
-	 		from
-	 			fetch_next
-	 		until
-	 			exhausted
-	 		loop
-	 			if is_quit then
-	 				quit_happens:= true
-	 			end
-	 			if is_keydown then
-	 				key_down
-	 			end
-	 			if is_keyup then
+		do
+			from
+				fetch_next
+			until
+				exhausted
+			loop
+				if is_quit then
+					quit_happens := true
+				end
+				if is_keydown then
+					key_down
+				end
+				if is_keyup then
 					key_up
-	 			end
-	 			fetch_next
-	 		end
-	 	end
+				end
+				fetch_next
+			end
+		end
 
 	key_down
 		local
-			keysym:INTEGER
+			keysym: INTEGER
 		do
-			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
-			right_pressed:=(keysym = SDLK_RIGHT)
-			left_pressed:=(keysym = SDLK_LEFT)
-			up_pressed:=(keysym = SDLK_UP)
-			down_pressed:=(keysym = SDLK_DOWN)
-			space_pressed:=(keysym = SDLK_SPACE)
+			keysym := SDL_GetKeySym (SDL_GetKey (SDL_Event))
+			if keysym = SDLK_RIGHT then
+				right_pressed := true
+			end
+			if keysym = SDLK_LEFT then
+				LEFT_pressed := true
+			end
+			if keysym = SDLK_UP then
+				up_pressed := true
+			end
+			if keysym = SDLK_DOWN then
+				down_pressed := true
+			end
+			if keysym = SDLK_SPACE then
+				space_pressed := true
+			end
 		end
+
 	key_up
 		local
-			keysym:INTEGER
+			keysym: INTEGER
 		do
-			keysym:=SDL_GetKeySym (SDL_GetKey(SDL_Event))
+			keysym := SDL_GetKeySym (SDL_GetKey (SDL_Event))
 			if keysym = SDLK_RIGHT then
-				right_pressed:=false
+				right_pressed := false
 			end
-
 			if keysym = SDLK_LEFT then
-						left_pressed:=false
+				left_pressed := false
 			end
-
 			if keysym = SDLK_UP then
-						up_pressed:=false
+				up_pressed := false
 			end
-
 			if keysym = SDLK_DOWN then
-						down_pressed:=false
+				down_pressed := false
 			end
-
 			if keysym = SDLK_SPACE then
-						space_pressed:=false
+				space_pressed := false
 			end
 		end
 
@@ -102,17 +110,17 @@ feature
 
 	is_quit: BOOLEAN
 		do
-			Result:=type = SDL_QUIT
+			Result := type = SDL_QUIT
 		end
 
 	is_keydown: BOOLEAN
 		do
-			Result:=type = SDL_KEYDOWN
+			Result := type = SDL_KEYDOWN
 		end
 
 	is_keyup: BOOLEAN
 		do
-			Result:=type = SDL_KEYUP
+			Result := type = SDL_KEYUP
 		end
 
 end

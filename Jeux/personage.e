@@ -23,7 +23,9 @@ create
 
 feature
 	hp:INTEGER assign set_hp
+	gravity:INTEGER
 	personage_left, personage_right:POINTER
+	jumping:BOOLEAN assign set_jumping
 	make(a_targetscreen:POINTER;a_path:STRING;a_x,a_y:INTEGER)
 	local
 		memory_manager:POINTER
@@ -43,8 +45,26 @@ feature
 		set_y_rect (personage_left,0)
 		set_w_rect (personage_left, 144)
 		set_h_rect (personage_left, 160)
+
+		gravity:=16
 	end
 
+	jump
+	do
+		if y-gravity > 370 then
+			jumping:=false
+			set_y(370)
+			gravity:=16
+		else
+			set_y(y-gravity)
+			gravity:=gravity-1
+		end
+	end
+
+	set_jumping(a_jumping:BOOLEAN)
+	do
+		jumping:=a_jumping
+	end
 	set_hp(a_hp:INTEGER)
 	do
 		hp:=a_hp

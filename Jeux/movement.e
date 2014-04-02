@@ -33,16 +33,6 @@ feature
 			set_orientation (2)
 		end
 
-	go_up
-		do
-				--		set_y (y-vitesse)
-		end
-
-	go_down
-		do
-				--		set_y (y+vitesse)
-		end
-
 	destroy
 		do
 		end
@@ -62,7 +52,6 @@ feature
 	set_orientation (a_orientation: INTEGER)
 		deferred
 		end
-
 	x: INTEGER assign set_x
 		deferred
 		end
