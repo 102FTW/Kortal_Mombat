@@ -46,16 +46,16 @@ feature
 					display.personnage.go_left
 				end
 
-				if event.up_pressed AND display.personnage.jumping=false then
-					display.personnage.jumping:=true
+				if event.up_pressed AND display.personnage.jumping=false then --If up is pressed and the personage isnt already in a jump loop
+					display.personnage.jumping:=true -- set jumping at true, to start the jumping loop
 				end
 
 				if event.down_pressed then
 				--	display.personnage.duck
 				end
 
-				if display.personnage.jumping=true then
-					display.personnage.jump
+				if display.personnage.jumping=true then -- if personnage is in a jumping loop
+					display.personnage.jump -- Do the next step into the jumping loop
 				end
 				if display.projectile.spawned then
 					display.projectile.move
