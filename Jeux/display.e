@@ -36,9 +36,9 @@ feature
 	create_images
 		do
 			create background.make (screen, "background.bmp", 0, 0)
-			create personnage.make (screen, "personnage.bmp", 300, 370)
-			create personnage2.make (screen, "personnage.bmp",800, 370)
-			personnage2.orientation:=2
+			create personnage.make (screen, "personnage.bmp", 800, 370)
+			create personnage2.make (screen, "boromir.bmp",300, 370)
+			personnage.orientation:=2
 			create sandbag.make (screen, "personnage.bmp", 200, 0)
 			create projectile1.make(screen, "projectile.bmp",0,0)
 			create projectile2.make(screen, "projectile.bmp",0,0)

@@ -42,12 +42,12 @@ feature
 			personage_right := memory_manager.memory_calloc (1, SDL_SIZEOF)
 			set_x_rect (personage_right, 0)
 			set_y_rect (personage_right, 0)
-			set_w_rect (personage_right, 144)
+			set_w_rect (personage_right, (width//2).to_natural_16)
 			set_h_rect (personage_right, 160)
 			personage_left := memory_manager.memory_calloc (1, SDL_SIZEOF)
-			set_x_rect (personage_left, 144)
+			set_x_rect (personage_left, (width//2).to_integer_16)
 			set_y_rect (personage_left, 0)
-			set_w_rect (personage_left, 144)
+			set_w_rect (personage_left,  (width//2).to_natural_16)
 			set_h_rect (personage_left, 160)
 			gravity := 20
 		end
