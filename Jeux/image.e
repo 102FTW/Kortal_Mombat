@@ -60,4 +60,13 @@ feature
 	do
 		set_y_rect(targetarea,a_y.to_integer_16)
 	end
+	width:INTEGER
+	do
+		result:=get_w_image(image)
+	end
+
+	height:INTEGER
+	do
+		result:=get_h_image(image)
+	end
 end

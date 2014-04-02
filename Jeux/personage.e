@@ -49,7 +49,7 @@ feature
 			set_y_rect (personage_left, 0)
 			set_w_rect (personage_left, 144)
 			set_h_rect (personage_left, 160)
-			gravity := 16
+			gravity := 20
 		end
 
 	jump
@@ -57,7 +57,7 @@ feature
 			if y - gravity >= 370 then --If the position of the personage is bellow the floor level after the movement, then cancel it
 				jumping := false --set jumping to false so the jumping loop is stopped
 				set_y (370) -- Place the personage at the floor level
-				gravity := 16 -- Reset the gravity to base value
+				gravity := 20 -- Reset the gravity to base value
 			else -- If the personnage is still in jump loop
 				set_y (y - gravity) -- Move the personage
 				gravity := gravity - 1 -- Lower the gravity so the personage moves smoothly
