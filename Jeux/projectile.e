@@ -59,13 +59,15 @@ feature
 	destroy
 		do
 			spawned:=false
+			set_x(-100)
+			set_y(-100)
 		end
 
 	spawn(a_x,a_y,a_orientation:INTEGER)
 		do
 			spawned:=true
-			set_x(a_x)
-			set_y(a_y)
+			set_x(a_x+72)
+			set_y(a_y+80)
 			orientation:=a_orientation
 		end
 	move
