@@ -77,6 +77,32 @@ feature {NONE}
 			"SDL_KEYUP"
 		end
 
+	frozen SDLK_A:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_a"
+		end
+	frozen SDLK_W:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_w"
+		end
+
+	frozen SDLK_S:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_s"
+		end
+
+	frozen SDLK_D:INTEGER
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDLK_d"
+		end
 	frozen SDLK_RIGHT:INTEGER
 		external
 			"C inline use <SDL.h>"

@@ -19,8 +19,8 @@ feature
 	screen: POINTER
 
 	background, sandbag: IMAGE
-	personnage:PERSONAGE
-	projectile:PROJECTILE
+	personnage,personnage2:PERSONAGE
+	projectile1,projectile2:PROJECTILE
 
 	make
 		local
@@ -37,8 +37,11 @@ feature
 		do
 			create background.make (screen, "background.bmp", 0, 0)
 			create personnage.make (screen, "personnage.bmp", 300, 370)
+			create personnage2.make (screen, "personnage.bmp",800, 370)
+			personnage2.orientation:=2
 			create sandbag.make (screen, "personnage.bmp", 200, 0)
-			create projectile.make(screen, "projectile.bmp",0,0)
+			create projectile1.make(screen, "projectile.bmp",0,0)
+			create projectile2.make(screen, "projectile.bmp",0,0)
 		end
 
 	show
@@ -47,8 +50,12 @@ feature
 		do
 			background.blitsurface
 			personnage.blitsurface
-			if projectile.spawned then
-				projectile.blitsurface
+			personnage2.blitsurface
+			if projectile1.spawned then
+				projectile1.blitsurface
+			end
+			if projectile2.spawned then
+				projectile2.blitsurface
 			end
 			error := SDL_Flip (screen)
 			SDL_Delay (1)

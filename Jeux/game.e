@@ -16,50 +16,24 @@ feature -- Access
 			-- `Menu'
 		attribute check False then end end --| Remove line when `Menu' is initialized in creation procedure.
 
-	 --| Remove line when `Collision' is initialized in creation procedure.
-
 feature
 
 	make
 		local
-			l_perso:PERSONAGE
-			l_projectile:PROJECTILE
 			event:EVENT
 			display:DISPLAY
+			key_handler:KEY_HANDLER
 
 		do
 			create event.make
 			create display.make
+			create key_handler.make
 			from
 			until
 				event.quit_happens
 			loop
 				event.handle
-				if event.space_pressed AND display.projectile.spawned=false then
-					display.projectile.spawn (display.personnage.x,display.personnage.y,display.personnage.orientation)
-				end
-				if event.right_pressed then
-					display.personnage.go_right
-				end
-
-				if event.left_pressed then
-					display.personnage.go_left
-				end
-
-				if event.up_pressed AND display.personnage.jumping=false then --If up is pressed and the personage isnt already in a jump loop
-					display.personnage.jumping:=true -- set jumping at true, to start the jumping loop
-				end
-
-				if event.down_pressed then
-				--	display.personnage.duck
-				end
-
-				if display.personnage.jumping=true then -- if personnage is in a jumping loop
-					display.personnage.jump -- Do the next step into the jumping loop
-				end
-				if display.projectile.spawned then
-					display.projectile.move
-				end
+				key_handler.handle (event, display.personnage,display.personnage2, display.projectile1, display.projectile2)
 				display.show
 			end
 			SDL_QUIT_BYE

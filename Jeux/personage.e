@@ -54,7 +54,7 @@ feature
 
 	jump
 		do
-			if y - gravity > 370 then --If the position of the personage is bellow the floor level after the movement, then cancel it
+			if y - gravity >= 370 then --If the position of the personage is bellow the floor level after the movement, then cancel it
 				jumping := false --set jumping to false so the jumping loop is stopped
 				set_y (370) -- Place the personage at the floor level
 				gravity := 16 -- Reset the gravity to base value
