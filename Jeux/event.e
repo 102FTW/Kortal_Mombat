@@ -18,7 +18,7 @@ feature
 
 	SDL_Event: POINTER
 
-	quit_happens, right_pressed, up_pressed, down_pressed, left_pressed, space_pressed, w_pressed, a_pressed, s_pressed, d_pressed: BOOLEAN
+	quit_happens, right_pressed, up_pressed, down_pressed, left_pressed, space_pressed, w_pressed, a_pressed, s_pressed, d_pressed, rctrl_pressed: BOOLEAN
 
 	return_value: INTEGER
 
@@ -81,6 +81,9 @@ feature
 			if keysym = SDLK_d then
 				d_pressed := true
 			end
+			if keysym = SDLK_RCTRL then
+				rctrl_pressed := true
+			end
 		end
 
 	key_up
@@ -114,6 +117,9 @@ feature
 			end
 			if keysym = SDLK_d then
 				d_pressed :=false
+			end
+			if keysym = SDLK_RCTRL then
+				rctrl_pressed := false
 			end
 		end
 

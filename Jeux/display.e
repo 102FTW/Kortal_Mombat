@@ -26,7 +26,7 @@ feature
 		local
 			error: INTEGER
 		do
-			error := SDL_Init (SDL_INIT_VIDEO)
+			error := SDL_Init (SDL_INIT_VIDEO | SDL_INIT_AUDIO)
 			screen := SDL_SetVideoMode (1263, 548, 32, SDL_SWSURFACE)
 			create_images
 		ensure
@@ -36,8 +36,8 @@ feature
 	create_images
 		do
 			create background.make (screen, "background.bmp", 0, 0)
-			create personnage.make (screen, "personnage.bmp", 800, 370)
-			create personnage2.make (screen, "boromir.bmp",300, 370)
+			create personnage.make (screen, "personnage.bmp", 800, 370,1)
+			create personnage2.make (screen, "boromir.bmp",300, 370,2)
 			personnage.orientation:=2
 			create sandbag.make (screen, "personnage.bmp", 200, 0)
 			create projectile1.make(screen, "projectile.bmp",0,0)
@@ -50,7 +50,10 @@ feature
 		do
 			background.blitsurface
 			personnage.blitsurface
+			personnage.show_hp
 			personnage2.blitsurface
+				personnage2.blitsurface
+			personnage2.show_hp
 			if projectile1.spawned then
 				projectile1.blitsurface
 			end

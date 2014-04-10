@@ -7,7 +7,9 @@
 		</option>
 		<setting name="console_application" value="true"/>
 		<external_include location="..\..\..\..\SDL-1.2.14\include\SDL"/>
+		<external_include location="..\..\..\..\include"/>
 		<external_library location="..\..\..\SDL-1.2.14\lib\libSDL.dll.a"/>
+		<external_library location="..\..\..\lib\SDL_mixer.lib"/>
 		<precompile name="base_pre" location="$ISE_PRECOMP\base-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<cluster name="jeux" location=".\" recursive="true">

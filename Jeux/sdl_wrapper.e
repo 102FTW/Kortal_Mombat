@@ -55,6 +55,18 @@ feature {NONE}
 		alias
 			"SDL_INIT_VIDEO"
 		end
+	frozen SDL_INIT_AUDIO: NATURAL_32
+		external
+			"C inline use <SDL.h>"
+		alias
+			"SDL_INIT_AUDIO"
+		end
+	frozen AUDIO_S16SYS: NATURAL_16
+		external
+			"C inline use <SDL.h>"
+		alias
+			"AUDIO_S16SYS"
+		end
 
 	frozen SDL_SWSURFACE: NATURAL_32
 		external
@@ -82,6 +94,12 @@ feature {NONE}
 			"C inline use <SDL.h>"
 		alias
 			"SDLK_a"
+		end
+	frozen SDLK_RCTRL:INTEGER
+			external
+				"C inline use <SDL.h>"
+			alias
+				"SDLK_RCTRL"
 		end
 	frozen SDLK_W:INTEGER
 		external
@@ -190,6 +208,25 @@ feature {NONE}
 			"C (Uint32)| <SDL.h>"
 		alias
 			"SDL_Delay"
+		end
+	frozen Mix_OpenAudio(frequency:INTEGER;format:NATURAL_16;channels:INTEGER;chunksize:INTEGER):INTEGER
+		external
+				"C (int,Uint16,int,int):int | <SDL_mixer.h>"
+			alias
+				"Mix_OpenAudio"
+			end
+
+	frozen Mix_LoadWAV(fname:POINTER):POINTER
+		external
+			"C (const char *):Mix_Chunk | <SDL_mixer.h>"
+		alias
+			"Mix_LoadWAV"
+		end
+	frozen Mix_PlayChannel (channel:INTEGER;chunk:POINTER;loops:INTEGER):INTEGER
+		external
+			"C (int,Mix_Chunk *,int):int | <SDL_mixer.h>"
+		alias
+			"Mix_PlayChannel"
 		end
 
 	frozen SDL_MapRGB (format:POINTER;r,g,b:NATURAL_8):NATURAL_32
