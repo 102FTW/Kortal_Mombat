@@ -1,7 +1,8 @@
 note
-	description: "Jeux application root class"
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "Cette classe est la classe maîtresse du programme."
+	author: "Guillaume Boudreau et Philippe Paquette"
+	date: "8 Mai 2014"
+	revision: "1.0.0.0.0"
 
 class
 	GAME
@@ -11,10 +12,6 @@ create
 	make
 
 feature -- Access
-
-	Menu: MENU
-			-- `Menu'
-		attribute check False then end end --| Remove line when `Menu' is initialized in creation procedure.
 
 feature
 

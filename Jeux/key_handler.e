@@ -1,8 +1,9 @@
 note
-	description: "Summary description for {KEY_HANDLER}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "Cette classe permet de gérer les événements provoqués"
+				 "lorsque nous pesons sur une touche."
+	author: "Guillaume Boudreau et Philippe Paquette"
+	date: "8 Mai 2014"
+	revision: "1.0.0.0.0"
 
 class
 	KEY_HANDLER

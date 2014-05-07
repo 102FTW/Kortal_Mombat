@@ -1,9 +1,8 @@
 note
-	description: "Summary description for {DISPLAY}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
-
+	description: "Cette classe permet d'afficher les images sur l'écran"
+	author: "Guillaume Boudreau et Philippe Paquette"
+	date: "8 Mai 2014"
+	revision: "1.0.0.0.0"
 class
 	DISPLAY
 

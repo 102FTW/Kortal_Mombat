@@ -1,8 +1,9 @@
 note
-	description: "Summary description for {PROJECTILE}."
-	author: ""
-	date: "$Date$"
-	revision: "$Revision$"
+	description: "Cette classe permet de gérer les projectiles"
+				 "lancé par les personnages"
+	author: "Guillaume Boudreau et Philippe Paquette"
+	date: "8 Mai 2014"
+	revision: "1.0.0.0.0"
 
 class
 	PROJECTILE
