@@ -14,13 +14,37 @@ inherit
 create
 	make
 
-feature
+feature {NONE}
 
 	SDL_Event: POINTER
 
-	quit_happens, right_pressed, up_pressed, down_pressed, left_pressed, space_pressed, w_pressed, a_pressed, s_pressed, d_pressed, rctrl_pressed: BOOLEAN
-
 	return_value: INTEGER
+
+feature
+
+	quit_happens: BOOLEAN
+
+	right_pressed: BOOLEAN
+
+	up_pressed: BOOLEAN
+
+	down_pressed: BOOLEAN
+
+	left_pressed: BOOLEAN
+
+	space_pressed: BOOLEAN
+
+	w_pressed: BOOLEAN
+
+	a_pressed: BOOLEAN
+
+	s_pressed: BOOLEAN
+
+	d_pressed: BOOLEAN
+
+	rctrl_pressed: BOOLEAN
+
+
 
 	make
 		local
@@ -107,16 +131,16 @@ feature
 				space_pressed := false
 			end
 			if keysym = SDLK_w then
-				w_pressed :=false
+				w_pressed := false
 			end
 			if keysym = SDLK_a then
-				a_pressed :=false
+				a_pressed := false
 			end
 			if keysym = SDLK_s then
-				s_pressed :=false
+				s_pressed := false
 			end
 			if keysym = SDLK_d then
-				d_pressed :=false
+				d_pressed := false
 			end
 			if keysym = SDLK_RCTRL then
 				rctrl_pressed := false

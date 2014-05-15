@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-11-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-11-0 http://www.eiffel.com/developers/xml/configuration-1-11-0.xsd" name="jeux" uuid="67557296-EC9E-4241-9574-A1A28F8BCE7F">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-12-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-12-0 http://www.eiffel.com/developers/xml/configuration-1-12-0.xsd" name="jeux" uuid="67557296-EC9E-4241-9574-A1A28F8BCE7F">
 	<target name="jeux">
 		<root class="GAME" feature="make"/>
 		<option warning="true">
 			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
 		</option>
 		<setting name="console_application" value="true"/>
-		<external_include location="..\..\..\..\SDL-1.2.14\include\SDL"/>
-		<external_include location="..\..\..\..\include"/>
-		<external_library location="..\..\..\SDL-1.2.14\lib\libSDL.dll.a"/>
-		<external_library location="..\..\..\lib\SDL_mixer.lib"/>
+		<external_include location="..\..\..\..\SDL-1.2.14\include\SDL">
+			<condition>
+				<platform value="windows"/>
+			</condition>
+		</external_include>
+		<external_include location="..\..\..\..\include">
+			<condition>
+				<platform value="windows"/>
+			</condition>
+		</external_include>
+		<external_cflag value="`sdl-config --cflags`">
+			<condition>
+				<platform excluded_value="windows"/>
+			</condition>
+		</external_cflag>
+		<external_cflag value="`pkg-config --cflags SDL_mixer`">
+			<condition>
+				<platform excluded_value="windows"/>
+			</condition>
+		</external_cflag>
+		<external_library location="..\..\..\SDL-1.2.14\lib\libSDL.dll.a">
+			<condition>
+				<platform value="windows"/>
+			</condition>
+		</external_library>
+		<external_library location="..\..\..\lib\SDL_mixer.lib">
+			<condition>
+				<platform value="windows"/>
+			</condition>
+		</external_library>
+		<external_linker_flag value="`sdl-config --libs`">
+			<condition>
+				<platform excluded_value="windows"/>
+			</condition>
+		</external_linker_flag>
+		<external_linker_flag value="`pkg-config --libs SDL_mixer`">
+			<condition>
+				<platform excluded_value="windows"/>
+			</condition>
+		</external_linker_flag>
 		<precompile name="base_pre" location="$ISE_PRECOMP\base-safe.ecf"/>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<cluster name="jeux" location=".\" recursive="true">
 			<file_rule>
 				<exclude>/EIFGENs$</exclude>
-				<exclude>/CVS$</exclude>
-				<exclude>/.svn$</exclude>
 			</file_rule>
 		</cluster>
 	</target>

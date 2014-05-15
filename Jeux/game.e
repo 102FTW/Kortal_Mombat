@@ -11,9 +11,7 @@ inherit
 create
 	make
 
-feature -- Access
-
-feature
+feature {NONE}  -- initialiation
 
 	make
 		local
