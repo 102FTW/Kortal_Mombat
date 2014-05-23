@@ -22,52 +22,51 @@
 
   <div class="wrapper">
     <header>
-      <h1 class="title">Kortal mombat</h1>
+      <h1 class="title"><a href="index.html">Kortal Mombat</a></h1>
     </header>
     <div id="container">
-      <p class="tagline">Video game projet OBJ 2</p>
+	
+       <a href="index.html" class="menu-button"><span>Accueil</span></a>
+	   <a href="gallerie.html" class="menu-button"><span>Gallerie</span></a>
+	   <a href="download.html" class="menu-button"><span>Téléchargement</span></a>
+	   <a href="documentation.html" class="menu-button"><span>Documentation</span></a>
       <div id="main" role="main">
         <div class="download-bar">
         <div class="inner">
-          <a href="https://github.com/102FTW/Kortal_Mombat/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/102FTW/Kortal_Mombat/zipball/master" class="download-button zip"><span>Download</span></a>
           <a href="https://github.com/102FTW/Kortal_Mombat" class="code">View Kortal mombat on GitHub</a>
+		 
         </div>
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Accueil</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Version 1.0</br> 23 Mai 2014 Guillaume Boudreau et Philippe Paquette </br></br>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+Kortal Mombat est un jeux d'habileté créer par Guillaume Boudreau et Philippe Paquette dans le cadre d'un cours de technique informatique au cégep de Drummondville. Le jeux est très simple, puisqu'il s'agit de lancer des haches sur son opposant et d'éviter celles-ci. Il est possible de contrôler le personnage de droite en appuyant sur les flèches droite et gauche pour le diriger et le flèche du haut pour le faire sauter. Pour tirer une hache, il suffit d'appuyer sur la ctrl droit. Pour le personnage de gauche, les contrôles sont A et D pour aller de gauche à droite, W pour sauter et la barre d'espace pour lancer une hache.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-        </article>
+<h1>Installer le jeu</h1>
+<h3>-Windows</h3>
+<p>
+Décompressez le fichier compressé dans le dossier de votre choix et exécutez.
+</p>
+<h3>-Linux Debian</h3>
+<p>
+Décompressez le fichier compressé dans le dossier de votre choix. Vous devrez aussi, en plus d'installer le repository, installer les fichiers binaires SDL et SDL_Mixer manuellement par cette commande:
+</p>
+<my_code>$ sudo apt-get install libsdl1.2 libsdl-mixer1.2</my_code>
+<h1>Compiler la source du jeu</h1>
+<p>La première chose à faire est de télécharger le repository de Kortal Mombat à l'adresse suivante:</p>
+<ul><li><a target="_blank" href="https://github.com/102FTW/Kortal_Mombat">Mortal Kombat</a></li></ul>
+<p>Si vous voulez pouvoir ouvrir et modifier le code, vous aurez besoin de télécharger l'IDE d'EiffelStudio, à l'adresse suivante:</p>
+<ul><li><a target="_blank" href="https://www2.eiffel.com/download/">Eiffel Studio</a></li></ul>
+<h3>Installer sur Windows</h3>
+<p>L'installation du repository est la seule chose nécessaire pour travailler sur le code du jeu.</p>
+<h3>Installer sur Linux Debian</h3>
+<p>Pour installer sur Linux, vous devrez installer les librairies SDL et SDL_Mixer manuellement par cette commande:<p>
+<my_code> $ sudo apt-get install libsdl1.2-dev libsdl-mixer1.2-dev <my_code>
+ </article>
       </div>
     </div>
     <footer>
@@ -80,11 +79,6 @@ $ git checkout gh-pages
         <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
       </div>
     </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/102FTW/Kortal_Mombat/tarball/master" class="tar">tar</a><a href="https://github.com/102FTW/Kortal_Mombat/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
   </div>
 
   
