@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 13.11.9.3542 GPL Edition - windows">
+<meta name="description" content="TCette classe de gérer les personnages dans le jeux  Tet leur point de vie"/>
+<meta name="author" content="Guillaume Boudreau et Philippe Paquette"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>personage Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="personage"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;</SPAN><SPAN CLASS="estring">[</SPAN>
+		<SPAN CLASS="estring">	Cette classe de gérer les personnages dans le jeux&quot;</SPAN>
+		<SPAN CLASS="estring"> 	et leur point de vie</SPAN>
+	<SPAN CLASS="estring">]</SPAN><SPAN CLASS="estring">&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Guillaume Boudreau et Philippe Paquette&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;8 Mai 2014&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;1.0.0.0.0&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../jeux/personage.html">PERSONAGE</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../jeux/image.html">IMAGE</A>
+		<SPAN CLASS="ekeyword">rename</SPAN>
+			<A CLASS="efeature" HREF="../jeux/image.html#f_make">make</A> <SPAN CLASS="ekeyword">as</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_make">make_image</A>
+		<SPAN CLASS="ekeyword">redefine</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_blitsurface">blitsurface</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A CLASS="eclass" HREF="../jeux/collision.html">COLLISION</A>
+
+	<A CLASS="eclass" HREF="../jeux/movement.html">MOVEMENT</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../jeux/personage.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> 
+
+	<A NAME="f_hp_bar"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_hp_bar">hp_bar</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/image.html">IMAGE</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'image de la barre de points de vie</SPAN>
+
+	<A NAME="f_pain"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_pain">pain</A><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/sound.html">SOUND</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient le son joué lorsque le personnage recoie du dommage</SPAN>
+
+	<A NAME="f_hp"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_set_hp">set_hp</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient les points de vie du personnage</SPAN>
+
+	<A NAME="f_gravity"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_set_gravity">set_gravity</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient la vitesse a laquelle le personannage doit tomber</SPAN>
+
+	<A NAME="f_set_gravity"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_set_gravity">set_gravity</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_gravity</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set la valeur de la gravité</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_gravity</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_on_floor"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_on_floor">on_floor</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_set_on_floor">set_on_floor</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Est a true lorsque le personnage est sur une surface</SPAN>
+
+	<A NAME="f_set_on_floor"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_set_on_floor">set_on_floor</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_on_floor</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set la valeur de on_floor</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_on_floor">on_floor</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_on_floor</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_personage_left"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'image du personange regardant vers la gauche</SPAN>
+
+	<A NAME="f_personage_right"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Conteint l'image du personange regardant vers la droite</SPAN>
+
+	<A NAME="f_jumping"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_jumping">jumping</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_set_jumping">set_jumping</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Est a true lorsque le personnage est dans une boucle de saut</SPAN>
+
+	<A NAME="f_character_num"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_character_num">character_num</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> if 1 == gimli if 2 == boromir</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_make">make</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_targetscreen</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">STRING_8</SPAN><SPAN CLASS="esymbol">;</SPAN> <SPAN CLASS="elocal">a_x</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_character_num</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">Initialise les personnages et les valeurs associées a ceux-ci</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">100</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_orientation">orientation</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<A CLASS="efeature" HREF="../jeux/image.html#f_make">make_image</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_targetscreen</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_path</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_x</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_y</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_calloc</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_sizeof">sdl_sizeof</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_x_rect">set_x_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_y_rect">set_y_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_w_rect">set_w_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_width">width</A> <SPAN CLASS="esymbol">//</SPAN> <SPAN CLASS="enumber">2</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_h_rect">set_h_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_height">height</A><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_calloc</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_sizeof">sdl_sizeof</A><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_x_rect">set_x_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_width">width</A> <SPAN CLASS="esymbol">//</SPAN> <SPAN CLASS="enumber">2</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_y_rect">set_y_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_w_rect">set_w_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_width">width</A> <SPAN CLASS="esymbol">//</SPAN> <SPAN CLASS="enumber">2</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_h_rect">set_h_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_height">height</A><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">20</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_on_floor">on_floor</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">a_character_num</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_hp_bar">hp_bar</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_targetscreen</SPAN><SPAN CLASS="esymbol">,</SPAN> &quot;hp_bar.bmp&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">963</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_hp_bar">hp_bar</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_targetscreen</SPAN><SPAN CLASS="esymbol">,</SPAN> &quot;hp_bar.bmp&quot;<SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_pain">pain</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/sound.html#f_make">make</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN>&quot;sound/hurt.wav&quot;<SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_jump"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_jump">jump</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Fait le mouvement de saut de notre personnage</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/personage.html#f_stop_jump">stop_jump</A>
+			<SPAN CLASS="ekeyword">else</SPAN>
+				<A CLASS="efeature" HREF="../jeux/image.html#f_set_y">set_y</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_y">y</A> <SPAN CLASS="esymbol">-</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">-</SPAN> <SPAN CLASS="enumber">1</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_stop_jump"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_stop_jump">stop_jump</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Arrete le saut</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_jumping">jumping</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_gravity">gravity</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">20</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_jumping"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_set_jumping">set_jumping</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_jumping</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> set la valeur de jumping</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_jumping">jumping</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_jumping</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_set_hp"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_set_hp">set_hp</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_hp</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set les points de vie du personnage</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_hp</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_hurt"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_hurt">hurt</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">damage</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Reduit les points de vie du pesronnage et</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_set_hp">set_hp</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A> <SPAN CLASS="esymbol">-</SPAN> <SPAN CLASS="elocal">damage</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_pain">pain</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/sound.html#f_play">play</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_orientation"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_orientation">orientation</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_set_orientation">set_orientation</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'orientation du personnage</SPAN>
+
+	<A NAME="f_set_orientation"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_set_orientation">set_orientation</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_orientation</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set l'orientation du personange</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/personage.html#f_orientation">orientation</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">a_orientation</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_show_hp"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_show_hp">show_hp</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Affiche la barre de points de vies</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="elocal">error</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A> <SPAN CLASS="esymbol">&gt;=</SPAN> <SPAN CLASS="enumber">0</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">shown_surface</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_calloc</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_sizeof">sdl_sizeof</A><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_x_rect">set_x_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_y_rect">set_y_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">0</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_integer_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_w_rect">set_w_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">25</SPAN> <SPAN CLASS="esymbol">+</SPAN> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">25</SPAN> <SPAN CLASS="esymbol">*</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_hp">hp</A><SPAN CLASS="esymbol">)</SPAN> <SPAN CLASS="esymbol">//</SPAN> <SPAN CLASS="enumber">10</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_set_h_rect">set_h_rect</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="enumber">75</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">to_natural_16</SPAN><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">error</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_blitsurface">sdl_blitsurface</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/personage.html#f_hp_bar">hp_bar</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_image">image</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_screen">screen</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_hp_bar">hp_bar</A><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_targetarea">targetarea</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">shown_surface</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_free</SPAN>
+				<SPAN CLASS="elocal">memory_manager</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_free</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_blitsurface"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_blitsurface">blitsurface</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Affiche l'image sur l'écran en fonction de son orientation</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">error</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_orientation">orientation</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">1</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">error</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_blitsurface">sdl_blitsurface</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_image">image</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_personage_right">personage_right</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_screen">screen</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_targetarea">targetarea</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_orientation">orientation</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">2</SPAN> <SPAN CLASS="ekeyword">then</SPAN>
+				<SPAN CLASS="elocal">error</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_blitsurface">sdl_blitsurface</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/image.html#f_image">image</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/personage.html#f_personage_left">personage_left</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_screen">screen</A><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/image.html#f_targetarea">targetarea</A><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">check</SPAN>
+				<SPAN CLASS="etag">blitsurface</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="elocal">error</SPAN> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_vitesse"></A><A CLASS="efeature" HREF="../jeux/personage.html#f_vitesse">vitesse</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient la vitesse de déplacement du personnage</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="enumber">5</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../jeux/personage.html">PERSONAGE</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="personage_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="personage"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 13.11.9.3542 GPL Edition - windows">
+<meta name="description" content="TCette classe permet de gérer les projectiles  Tlancé par les personnages"/>
+<meta name="author" content="Guillaume Boudreau et Philippe Paquette"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>projectile Chart</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile.html">Text</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="projectile"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">class</SPAN>
+	<A CLASS="eclass" HREF="../jeux/projectile_chart.html">PROJECTILE</A>
+
+<SPAN CLASS="ekeyword">General</SPAN>
+	<SPAN CLASS="eitag">cluster</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="ecluster" HREF="../jeux/index.html">jeux</A>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> 
+		<SPAN CLASS="estring">&quot;Cette classe permet de gérer les projectiles</SPAN>
+		<SPAN CLASS="estring"> lancé par les personnages&quot;</SPAN>
+	<SPAN CLASS="eitag">create</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="efeature" HREF="../jeux/projectile.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">Ancestors</SPAN>
+	<A CLASS="eclass" HREF="../jeux/collision_chart.html">COLLISION</A><SPAN CLASS="echar">*</SPAN>
+	<A CLASS="eclass" HREF="../jeux/image_chart.html">IMAGE</A>
+	<A CLASS="eclass" HREF="../jeux/movement_chart.html">MOVEMENT</A><SPAN CLASS="echar">*</SPAN>
+
+<SPAN CLASS="ekeyword">Queries</SPAN>
+	<SPAN TITLE="`check_collide' was declared in COLLISION"><A CLASS="efeature" HREF="../jeux/collision.html#f_check_collide">check_collide</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_collision</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/collision_chart.html">COLLISION</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN></SPAN>
+	<SPAN TITLE="`get_w_image' was declared in SDL_WRAPPER"><A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_get_w_image">get_w_image</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">targetarea</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`height' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_height">height</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`image' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_image">image</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN></SPAN>
+	<SPAN TITLE="`on_top_of' was declared in COLLISION"><A CLASS="efeature" HREF="../jeux/collision.html#f_on_top_of">on_top_of</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_collision</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/collision_chart.html">COLLISION</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN></SPAN>
+	<SPAN TITLE="`orientation' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_orientation">orientation</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`projectile_left' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_projectile_left">projectile_left</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN></SPAN>
+	<SPAN TITLE="`projectile_right' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_projectile_right">projectile_right</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN></SPAN>
+	<SPAN TITLE="`screen' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_screen">screen</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN></SPAN>
+	<SPAN TITLE="`spawned' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_spawned">spawned</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN></SPAN>
+	<SPAN TITLE="`targetarea' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_targetarea">targetarea</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN></SPAN>
+	<SPAN TITLE="`vitesse' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_vitesse">vitesse</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`width' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_width">width</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`x' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_x">x</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+	<SPAN TITLE="`y' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_y">y</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN></SPAN>
+
+<SPAN CLASS="ekeyword">Commands</SPAN>
+	<SPAN TITLE="`blitsurface' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_blitsurface">blitsurface</A></SPAN>
+	<SPAN TITLE="`destroy' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_destroy">destroy</A></SPAN>
+	<SPAN TITLE="`go_left' was declared in MOVEMENT"><A CLASS="efeature" HREF="../jeux/movement.html#f_go_left">go_left</A></SPAN>
+	<SPAN TITLE="`go_right' was declared in MOVEMENT"><A CLASS="efeature" HREF="../jeux/movement.html#f_go_right">go_right</A></SPAN>
+	<SPAN TITLE="`move' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_move">move</A></SPAN>
+	<SPAN TITLE="`set_orientation' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_set_orientation">set_orientation</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_orientation</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_x' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_set_x">set_x</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_x</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`set_y' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_set_y">set_y</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_y</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+	<SPAN TITLE="`setcolorkey' was declared in IMAGE"><A CLASS="efeature" HREF="../jeux/image.html#f_setcolorkey">setcolorkey</A></SPAN>
+	<SPAN TITLE="`spawn' is declared in `Current'"><A CLASS="efeature" HREF="../jeux/projectile.html#f_spawn">spawn</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_x</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_y</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">a_orientation</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN></SPAN>
+
+<FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="nolink2">Chart</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile.html">Text</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="projectile_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="projectile"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>

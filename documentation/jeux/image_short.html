@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 13.11.9.3542 GPL Edition - windows">
+<meta name="description" content="Cette classe permet de gérer un image en SDL"/>
+<meta name="author" content="Guillaume Boudreau et Philippe Paquette"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>image Contracts</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image.html">Text</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_flat.html">Flat</A></TD>
+<TD CLASS="nolink2">Contracts</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="image"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Cette classe permet de gérer un image en SDL&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Guillaume Boudreau et Philippe Paquette&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;8 Mai 2014&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;1.0.0.0.0&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> <SPAN CLASS="ekeyword">interface</SPAN>
+	<A CLASS="eclass" HREF="../jeux/image_short.html">IMAGE</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../jeux/image_short.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> 
+
+	<A NAME="f_image"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_image">image</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'adresse de l'image</SPAN>
+
+	<A NAME="f_screen"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_screen">screen</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'adresse de l'écran sur laquelle l'image doit etre affichée</SPAN>
+
+	<A NAME="f_targetarea"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_targetarea">targetarea</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">Contient les coordonées de l'image</SPAN>
+
+	<A NAME="f_setcolorkey"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_setcolorkey">setcolorkey</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Set le couleur que SDL doit considérer comme invisible</SPAN>
+
+	<A NAME="f_blitsurface"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_blitsurface">blitsurface</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Affiche l'image sur l'écran</SPAN>
+
+	<A NAME="f_x"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_x">x</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/image_short.html#f_set_x">set_x</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Position x de l'image</SPAN>
+
+	<A NAME="f_y"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_y">y</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN> <SPAN CLASS="ekeyword">assign</SPAN> <A CLASS="efeature" HREF="../jeux/image_short.html#f_set_y">set_y</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Position y de l'image</SPAN>
+
+	<A NAME="f_set_x"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_set_x">set_x</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_x</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> set la position x de l'image</SPAN>
+
+	<A NAME="f_set_y"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_set_y">set_y</A> <SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">a_y</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> set la position x de l'image</SPAN>
+
+	<A NAME="f_width"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_width">width</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> contient la largeur de l'image</SPAN>
+
+	<A NAME="f_height"></A><A CLASS="efeature" HREF="../jeux/image_short.html#f_height">height</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> contient la hauteur de l'image</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../jeux/image_short.html">IMAGE</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_links.html">Relations</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image.html">Text</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_flat.html">Flat</A></TD>
+<TD CLASS="nolink2">Contracts</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="image_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="image"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

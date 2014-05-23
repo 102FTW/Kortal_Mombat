@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 13.11.9.3542 GPL Edition - windows">
+<meta name="description" content="Cette classe est la classe maîtresse du programme."/>
+<meta name="author" content="Guillaume Boudreau et Philippe Paquette"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>game Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="game"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Cette classe est la classe maîtresse du programme.&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Guillaume Boudreau et Philippe Paquette&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;8 Mai 2014&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;1.0.0.0.0&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../jeux/game.html">GAME</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../jeux/sdl_wrapper.html">SDL_WRAPPER</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../jeux/game.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> <SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> initialiation</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../jeux/game.html#f_make">make</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Loop globale du jeux</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">event</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/event.html">EVENT</A>
+			<SPAN CLASS="elocal">display</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/display.html">DISPLAY</A>
+			<SPAN CLASS="elocal">key_handler</SPAN><SPAN CLASS="esymbol">:</SPAN> <A CLASS="eclass" HREF="../jeux/key_handler.html">KEY_HANDLER</A>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">event</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_make">make</A>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_make">make</A>
+			<SPAN CLASS="ekeyword">create</SPAN> <SPAN CLASS="elocal">key_handler</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/key_handler.html#f_make">make</A>
+			<SPAN CLASS="ekeyword">from</SPAN>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<SPAN CLASS="elocal">event</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_quit_happens">quit_happens</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="elocal">event</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_handle">handle</A>
+				<SPAN CLASS="elocal">key_handler</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/key_handler.html#f_handle">handle</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="elocal">event</SPAN><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_personnage">personnage</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_personnage2">personnage2</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_projectile1">projectile1</A><SPAN CLASS="esymbol">,</SPAN> <SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_projectile2">projectile2</A><SPAN CLASS="esymbol">)</SPAN>
+				<SPAN CLASS="elocal">display</SPAN><SPAN CLASS="edot">.</SPAN><A CLASS="efeature" HREF="../jeux/display.html#f_show">show</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_quit_bye">sdl_quit_bye</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../jeux/game.html">GAME</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="game_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="game"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

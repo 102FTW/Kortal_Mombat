@@ -1,0 +1,242 @@
+<HTML>
+<HEAD>
+<META NAME="generator" CONTENT="ISE EiffelStudio version 13.11.9.3542 GPL Edition - windows">
+<meta name="description" content="Cette classe permet de gérer les événements"/>
+<meta name="author" content="Guillaume Boudreau et Philippe Paquette"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<TITLE>event Text</TITLE>
+<LINK REL="stylesheet" HREF="../default.css" TYPE="text/css">
+<SCRIPT TYPE="text/javascript" SRC="../goto.html"></SCRIPT>
+</HEAD>
+<BODY>
+<P ALIGN="CENTER">Automatic generation produced by ISE Eiffel</P>
+<pre><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="event"></TD>
+</TR></TABLE></FORM><SPAN CLASS="ekeyword">note</SPAN>
+	<SPAN CLASS="eitag">description</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Cette classe permet de gérer les événements&quot;</SPAN>
+	<SPAN CLASS="eitag">author</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;Guillaume Boudreau et Philippe Paquette&quot;</SPAN>
+	<SPAN CLASS="eitag">date</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;8 Mai 2014&quot;</SPAN>
+	<SPAN CLASS="eitag">revision</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="estring">&quot;1.0.0.0.0&quot;</SPAN>
+
+<SPAN CLASS="ekeyword">class</SPAN> 
+	<A CLASS="eclass" HREF="../jeux/event.html">EVENT</A>
+
+<SPAN CLASS="ekeyword">inherit</SPAN>
+	<A CLASS="eclass" HREF="../jeux/sdl_wrapper.html">SDL_WRAPPER</A>
+
+<SPAN CLASS="ekeyword">create</SPAN> 
+	<A CLASS="efeature" HREF="../jeux/event.html#f_make">make</A>
+
+<SPAN CLASS="ekeyword">feature</SPAN> <SPAN CLASS="esymbol">{</SPAN>NONE<SPAN CLASS="esymbol">}</SPAN> 
+
+	<A NAME="f_sdl_event"></A><A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient l'objet event de la librairie SDL</SPAN>
+
+	<A NAME="f_return_value"></A><A CLASS="efeature" HREF="../jeux/event.html#f_return_value">return_value</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Contient la valeur de retour de la fonction poll event de SDL (1 si il y as un evenement, 0 si il n'y as pas d'évenements</SPAN>
+	
+<SPAN CLASS="ekeyword">feature</SPAN> 
+
+	<A NAME="f_quit_happens"></A><A CLASS="efeature" HREF="../jeux/event.html#f_quit_happens">quit_happens</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Est a true lorsque l'on doit quitter le jeux</SPAN>
+
+	<A NAME="f_right_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_right_pressed">right_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le boutton right est appuyé</SPAN>
+
+	<A NAME="f_up_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_up_pressed">up_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button up est appuyé</SPAN>
+
+	<A NAME="f_down_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_down_pressed">down_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button down est appuyé</SPAN>
+
+	<A NAME="f_left_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_left_pressed">left_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button left est appuyé</SPAN>
+
+	<A NAME="f_space_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_space_pressed">space_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button space est appuyé</SPAN>
+
+	<A NAME="f_w_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_w_pressed">w_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button w est appuyé</SPAN>
+
+	<A NAME="f_a_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_a_pressed">a_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button a est appuyé</SPAN>
+
+	<A NAME="f_s_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_s_pressed">s_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button s est appuyé</SPAN>
+
+	<A NAME="f_d_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_d_pressed">d_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button d est appuyé</SPAN>
+
+	<A NAME="f_rctrl_pressed"></A><A CLASS="efeature" HREF="../jeux/event.html#f_rctrl_pressed">rctrl_pressed</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Vérifie si le button rctrl est appuyé</SPAN>
+
+	<A NAME="f_make"></A><A CLASS="efeature" HREF="../jeux/event.html#f_make">make</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Crée un espace mémoirs pour l'objet de type SDL_Event</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">l_memory_manager</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">POINTER</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="elocal">l_memory_manager</SPAN><SPAN CLASS="edot">.</SPAN><SPAN CLASS="nefeature">memory_calloc</SPAN><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><SPAN CLASS="enumber">1</SPAN><SPAN CLASS="esymbol">,</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_sizeof_event">sdl_sizeof_event</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_handle"></A><A CLASS="efeature" HREF="../jeux/event.html#f_handle">handle</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Gère les évenements et lance les fonction appropriées au type d'évènements</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">from</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_fetch_next">fetch_next</A>
+			<SPAN CLASS="ekeyword">until</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_exhausted">exhausted</A>
+			<SPAN CLASS="ekeyword">loop</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_is_quit">is_quit</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../jeux/event.html#f_quit_happens">quit_happens</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_is_keydown">is_keydown</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../jeux/event.html#f_key_down">key_down</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<SPAN CLASS="ekeyword">if</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_is_keyup">is_keyup</A> <SPAN CLASS="ekeyword">then</SPAN>
+					<A CLASS="efeature" HREF="../jeux/event.html#f_key_up">key_up</A>
+				<SPAN CLASS="ekeyword">end</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_fetch_next">fetch_next</A>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_key_down"></A><A CLASS="efeature" HREF="../jeux/event.html#f_key_down">key_down</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Mets a true les variables associées au key pressed</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">keysym</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_getkeysym">sdl_getkeysym</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_getkey">sdl_getkey</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_right">sdlk_right</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_right_pressed">right_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_left">sdlk_left</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_left_pressed">left_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_up">sdlk_up</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_up_pressed">up_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_down">sdlk_down</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_down_pressed">down_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_space">sdlk_space</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_space_pressed">space_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_w">sdlk_w</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_w_pressed">w_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_a">sdlk_a</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_a_pressed">a_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_s">sdlk_s</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_s_pressed">s_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_d">sdlk_d</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_d_pressed">d_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_rctrl">sdlk_rctrl</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_rctrl_pressed">rctrl_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">True</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_key_up"></A><A CLASS="efeature" HREF="../jeux/event.html#f_key_up">key_up</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Mets a false les keys associées au key up</SPAN>
+		<SPAN CLASS="ekeyword">local</SPAN>
+			<SPAN CLASS="elocal">keysym</SPAN><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">INTEGER_32</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_getkeysym">sdl_getkeysym</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_getkey">sdl_getkey</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A><SPAN CLASS="esymbol">)</SPAN><SPAN CLASS="esymbol">)</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_right">sdlk_right</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_right_pressed">right_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_left">sdlk_left</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_left_pressed">left_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_up">sdlk_up</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_up_pressed">up_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_down">sdlk_down</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_down_pressed">down_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_space">sdlk_space</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_space_pressed">space_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_w">sdlk_w</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_w_pressed">w_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_a">sdlk_a</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_a_pressed">a_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_s">sdlk_s</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_s_pressed">s_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_d">sdlk_d</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_d_pressed">d_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+			<SPAN CLASS="ekeyword">if</SPAN> <SPAN CLASS="elocal">keysym</SPAN> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdlk_rctrl">sdlk_rctrl</A> <SPAN CLASS="ekeyword">then</SPAN>
+				<A CLASS="efeature" HREF="../jeux/event.html#f_rctrl_pressed">rctrl_pressed</A> <SPAN CLASS="esymbol">:=</SPAN> <SPAN CLASS="ekeyword">False</SPAN>
+			<SPAN CLASS="ekeyword">end</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_fetch_next"></A><A CLASS="efeature" HREF="../jeux/event.html#f_fetch_next">fetch_next</A>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Poll le prochain évènements</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<A CLASS="efeature" HREF="../jeux/event.html#f_return_value">return_value</A> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_pollevent">sdl_pollevent</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_exhausted"></A><A CLASS="efeature" HREF="../jeux/event.html#f_exhausted">exhausted</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Renvoie true si il n'y as plus aucun évènements</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_return_value">return_value</A> <SPAN CLASS="esymbol">=</SPAN> <SPAN CLASS="enumber">0</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_type"></A><A CLASS="efeature" HREF="../jeux/event.html#f_type">type</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">NATURAL_8</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment">Renvoie le type de l'évènement</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_get_type">get_type</A><SPAN CLASS="esymbol"> </SPAN><SPAN CLASS="esymbol">(</SPAN><A CLASS="efeature" HREF="../jeux/event.html#f_sdl_event">sdl_event</A><SPAN CLASS="esymbol">)</SPAN>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_quit"></A><A CLASS="efeature" HREF="../jeux/event.html#f_is_quit">is_quit</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Renvoie true si le type de l'évènement est quit</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_type">type</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_quit">sdl_quit</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_keydown"></A><A CLASS="efeature" HREF="../jeux/event.html#f_is_keydown">is_keydown</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Renvoie true si le type d'évènement est un keydown</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_type">type</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_keydown">sdl_keydown</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+
+	<A NAME="f_is_keyup"></A><A CLASS="efeature" HREF="../jeux/event.html#f_is_keyup">is_keyup</A><SPAN CLASS="esymbol">:</SPAN> <SPAN CLASS="neclass">BOOLEAN</SPAN>
+			<SPAN CLASS="ecomment">--</SPAN><SPAN CLASS="ecomment"> Renvoie true si le type d'évènement est un keyup</SPAN>
+		<SPAN CLASS="ekeyword">do</SPAN>
+			<SPAN CLASS="ekeyword">Result</SPAN> <SPAN CLASS="esymbol">:=</SPAN> <A CLASS="efeature" HREF="../jeux/event.html#f_type">type</A> <SPAN CLASS="esymbol">=</SPAN> <A CLASS="efeature" HREF="../jeux/sdl_wrapper.html#f_sdl_keyup">sdl_keyup</A>
+		<SPAN CLASS="ekeyword">end</SPAN>
+	
+<SPAN CLASS="ekeyword">end</SPAN> <SPAN CLASS="ecomment">--</SPAN> <SPAN CLASS="ecomment">class </SPAN><A CLASS="eclass" HREF="../jeux/event.html">EVENT</A><FORM ONSUBMIT="go_to('../',this.c.value);return false;">
+<TABLE CELLSPACING="5" CELLPADDING="4"><TR>
+<TD CLASS="link1"><A CLASS="link1" HREF="../class_list.html">Classes</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_list.html">Clusters</A></TD>
+<TD CLASS="link1"><A CLASS="link1" HREF="../cluster_hierarchy.html">Cluster hierarchy</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_chart.html">Chart</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_links.html">Relations</A></TD>
+<TD CLASS="nolink2">Text</TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_flat.html">Flat</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_short.html">Contracts</A></TD>
+<TD CLASS="link2"><A CLASS="link2" HREF="event_flatshort.html">Flat contracts</A></TD>
+<TD CLASS="link2">Go to: <INPUT NAME="c" VALUE="event"></TD>
+</TR></TABLE></FORM></pre>
+<P ALIGN="CENTER"> &#045;&#045; Generated by ISE Eiffel &#045;&#045; 
+<BR>For more details: <A HREF="http://www.eiffel.com">www.eiffel.com</A></P>
+</BODY>
+</HTML>
+

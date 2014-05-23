@@ -1,0 +1,45 @@
+<!--
+	classList = new Array (
+		"COLLISION",
+		"DISPLAY",
+		"EVENT",
+		"GAME",
+		"IMAGE",
+		"KEY_HANDLER",
+		"MOVEMENT",
+		"PERSONAGE",
+		"PROJECTILE",
+		"SDL_WRAPPER",
+		"SOUND"
+	);
+
+	locationList = new Array (
+		"jeux/collision_chart.html",
+		"jeux/display_chart.html",
+		"jeux/event_chart.html",
+		"jeux/game_chart.html",
+		"jeux/image_chart.html",
+		"jeux/key_handler_chart.html",
+		"jeux/movement_chart.html",
+		"jeux/personage_chart.html",
+		"jeux/projectile_chart.html",
+		"jeux/sdl_wrapper_chart.html",
+		"jeux/sound_chart.html"
+	);
+
+	function indexOfClass (name) {
+		for (i = 0; i < classList.length; i++) {
+			if (name == classList[i]) return i;
+		}
+		return -1;
+	};
+
+	function go_to (baseLocation, className) {
+		var index = indexOfClass (className.toUpperCase ());
+		if (index >= 0) {
+			window.location = baseLocation + locationList[index];
+		} else {
+			alert ("Class " + className.toUpperCase () + " does not exist in system");
+		}
+	}
+// -->
