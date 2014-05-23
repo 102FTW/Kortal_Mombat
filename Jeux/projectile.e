@@ -31,7 +31,7 @@ create
 
 feature {NONE} --initialisation
 
-	make (a_targetscreen: POINTER; a_path: STRING; a_x, a_y: INTEGER)
+	make (a_targetscreen: POINTER; a_path: STRING; a_x, a_y: INTEGER) -- Initialise l'image et la position du projectile
 		local
 			memory_manager: POINTER
 		do
@@ -50,25 +50,26 @@ feature {NONE} --initialisation
 
 feature
 
-	projectile_left, projectile_right: POINTER
+	projectile_left: POINTER -- Contient l'image d'un projectile allant vers la gauche
+	projectile_right: POINTER -- Contient l'image d'un projectiel allant vers la droite
 
-	spawned: BOOLEAN
+	spawned: BOOLEAN -- Est a true lorsque le projectile est apparu
 
-	orientation: INTEGER assign set_orientation
+	orientation: INTEGER assign set_orientation -- Contient L'orentation du personange
 
-	set_orientation (a_orientation: INTEGER)
+	set_orientation (a_orientation: INTEGER) -- Set l'orientation du personnage
 		do
 			orientation := a_orientation
 		end
 
-	destroy
+	destroy -- Détruit le projectile
 		do
 			spawned := false
 			set_x (-100)
 			set_y (-100)
 		end
 
-	spawn (a_x, a_y, a_orientation: INTEGER)
+	spawn (a_x, a_y, a_orientation: INTEGER) -- Fait apparaitre le projectile a la position du personnage
 		do
 			spawned := true
 			set_x (a_x + 72)
@@ -76,7 +77,7 @@ feature
 			orientation := a_orientation
 		end
 
-	move
+	move -- Déplace le projectile
 		do
 			if orientation = 1 then
 				go_right
@@ -85,7 +86,7 @@ feature
 			end
 		end
 
-	blitsurface
+	blitsurface -- Affiche le projectile sur l'écran en fonction de son orientation
 		local
 			error: INTEGER
 		do
@@ -100,7 +101,7 @@ feature
 			end
 		end
 
-	vitesse: INTEGER
+	vitesse: INTEGER -- Vitesse du projectile
 		do
 			result := 10
 		end

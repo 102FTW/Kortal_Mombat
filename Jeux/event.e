@@ -16,44 +16,43 @@ create
 
 feature {NONE}
 
-	SDL_Event: POINTER
+	SDL_Event: POINTER -- Contient l'objet event de la librairie SDL
 
-	return_value: INTEGER
+	return_value: INTEGER -- Contient la valeur de retour de la fonction poll event de SDL (1 si il y as un evenement, 0 si il n'y as pas d'évenements
 
 feature
 
-	quit_happens: BOOLEAN
+	quit_happens: BOOLEAN -- Est a true lorsque l'on doit quitter le jeux
 
-	right_pressed: BOOLEAN
+	right_pressed: BOOLEAN -- Vérifie si le boutton right est appuyé
 
-	up_pressed: BOOLEAN
+	up_pressed: BOOLEAN -- Vérifie si le button up est appuyé
 
-	down_pressed: BOOLEAN
+	down_pressed: BOOLEAN -- Vérifie si le button down est appuyé
 
-	left_pressed: BOOLEAN
+	left_pressed: BOOLEAN -- Vérifie si le button left est appuyé
 
-	space_pressed: BOOLEAN
+	space_pressed: BOOLEAN -- Vérifie si le button space est appuyé
 
-	w_pressed: BOOLEAN
+	w_pressed: BOOLEAN -- Vérifie si le button w est appuyé
 
-	a_pressed: BOOLEAN
+	a_pressed: BOOLEAN -- Vérifie si le button a est appuyé
 
-	s_pressed: BOOLEAN
+	s_pressed: BOOLEAN -- Vérifie si le button s est appuyé
 
-	d_pressed: BOOLEAN
+	d_pressed: BOOLEAN -- Vérifie si le button d est appuyé
 
-	rctrl_pressed: BOOLEAN
+	rctrl_pressed: BOOLEAN-- Vérifie si le button rctrl est appuyé
 
 
-
-	make
+	make -- Crée un espace mémoirs pour l'objet de type SDL_Event
 		local
-			memory_manager: POINTER
+			l_memory_manager: POINTER
 		do
-			SDL_Event := memory_manager.memory_calloc (1, SDL_SIZEOF_EVENT)
+			SDL_Event := l_memory_manager.memory_calloc (1, SDL_SIZEOF_EVENT)
 		end
 
-	handle
+	handle -- Gère les évenements et lance les fonction appropriées au type d'évènements
 		do
 			from
 				fetch_next
@@ -73,7 +72,7 @@ feature
 			end
 		end
 
-	key_down
+	key_down -- Mets a true les variables associées au key pressed
 		local
 			keysym: INTEGER
 		do
@@ -110,7 +109,7 @@ feature
 			end
 		end
 
-	key_up
+	key_up -- Mets a false les keys associées au key up
 		local
 			keysym: INTEGER
 		do
@@ -147,32 +146,32 @@ feature
 			end
 		end
 
-	fetch_next
+	fetch_next -- Poll le prochain évènements
 		do
 			return_value := SDL_PollEvent (SDL_Event)
 		end
 
-	exhausted: BOOLEAN
+	exhausted: BOOLEAN -- Renvoie true si il n'y as plus aucun évènements
 		do
 			result := return_value = 0
 		end
 
-	type: NATURAL_8
+	type: NATURAL_8 --Renvoie le type de l'évènement
 		do
 			result := get_type (SDL_Event)
 		end
 
-	is_quit: BOOLEAN
+	is_quit: BOOLEAN -- Renvoie true si le type de l'évènement est quit
 		do
 			Result := type = SDL_QUIT
 		end
 
-	is_keydown: BOOLEAN
+	is_keydown: BOOLEAN -- Renvoie true si le type d'évènement est un keydown
 		do
 			Result := type = SDL_KEYDOWN
 		end
 
-	is_keyup: BOOLEAN
+	is_keyup: BOOLEAN -- Renvoie true si le type d'évènement est un keyup
 		do
 			Result := type = SDL_KEYUP
 		end

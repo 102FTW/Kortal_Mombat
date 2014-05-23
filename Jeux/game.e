@@ -13,7 +13,7 @@ create
 
 feature {NONE}  -- initialiation
 
-	make
+	make -- Loop globale du jeux
 		local
 			event:EVENT
 			display:DISPLAY

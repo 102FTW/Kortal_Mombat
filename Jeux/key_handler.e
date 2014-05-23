@@ -15,7 +15,7 @@ create
 
 feature {NONE} -- Initialisation
 
-	make
+	make -- Initialise la gravité de chacun des personange
 		do
 			gravity_1 := 1
 			gravity_2 := 1
@@ -23,15 +23,12 @@ feature {NONE} -- Initialisation
 
 feature
 
-	gravity_1: INTEGER
-			--	set_gravity_1(a_set_gravity_1:INTEGER)
-			--	do
-			--		gravity_1:=
-			--	end
+	gravity_1: INTEGER -- Contient la gravité du personnage 1
 
-	gravity_2: INTEGER
+	gravity_2: INTEGER -- Contient la gravité du personnage 2
 
 	handle (a_event: EVENT; a_personage_1, a_personage_2: PERSONAGE; a_projectile_1, a_projectile_2: PROJECTILE)
+		--Permet de gerer tout les évenements pouvant se produire dans le jeux tels que les collision, la gravité et appliquer des dégats au personanges
 		local
 			l_x, l_y: INTEGER
 		do
@@ -57,9 +54,6 @@ feature
 			end
 			if a_event.up_pressed AND a_personage_1.on_floor then --If up is pressed and the personage isnt already in a jump loop
 				a_personage_1.jumping := true -- set jumping at true, to start the jumping loop
-			end
-			if a_event.down_pressed AND a_personage_1.check_collide (a_personage_2) = false then
-					--	display.personnage.duck
 			end
 			if a_event.w_pressed AND a_personage_2.on_floor then
 				a_personage_2.jumping := true

@@ -16,7 +16,9 @@ create
 
 feature {NONE} --initialisation
 
-	audio_rate, audio_channels, audio_buffers: INTEGER
+	audio_rate : INTEGER --
+	audio_channels : INTEGER -- Chanel du son
+    audio_buffers: INTEGER
 
 	audio_format: NATURAL_16
 
@@ -24,7 +26,7 @@ feature {NONE} --initialisation
 
 	noiseChannel: INTEGER
 
-	make (a_path: STRING)
+	make (a_path: STRING) -- Initialise les variables utilisé pour le son
 		local
 			path_sound: C_STRING
 		do
@@ -43,7 +45,7 @@ feature {NONE} --initialisation
 
 feature
 
-	play
+	play -- Permet de jouer le son
 		local
 		do
 			if noiseChannel < 0 then
